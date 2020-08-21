@@ -1,6 +1,7 @@
 class Cocktail
 
     attr_accessor :name, :glass, :recipe, :instructions, :video
+    
     @@all = []
     
     def initialize(name, glass, instructions, video, recipe)
@@ -17,26 +18,41 @@ class Cocktail
     end
 
     def self.grab_cocktail(input)
-         found_cocktail = self.all.find do |cocktail|
+         @@current_cocktail = self.all.find do |cocktail|
             cocktail == Cocktail.all[input - 1]
         end
+
         puts ""
         puts "--------------------"
-        puts found_cocktail.name    
+        puts @@current_cocktail.name    
         puts "--------------------"
         puts ""
         puts "Recipe:"
         puts ""
-        puts found_cocktail.recipe
+        puts @@current_cocktail.recipe
         puts ""
-        puts "Glass"
+        puts "Glassware:"
+        puts @@current_cocktail.glass
         puts ""
-        puts found_cocktail.glass
+        puts "Instructions:"
+        puts @@current_cocktail.instructions
         puts ""
-        puts "Instructions"
-        puts ""
-        puts found_cocktail.instructions
 
+    end
+
+    def self.show_me
+        if @@current_cocktail.video == nil
+            puts ""
+            puts "Sorry, that cocktail doesn't have a video available"
+        else 
+            puts ""
+            puts @@current_cocktail.video
+
+        end
+    end
+
+    def self.reset_current
+        @@all.clear
     end
 
 end
