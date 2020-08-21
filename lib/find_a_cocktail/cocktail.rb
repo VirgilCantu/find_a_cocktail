@@ -1,12 +1,14 @@
 class Cocktail
 
-    attr_accessor :name, :glass, :ingredients, :measurements, :instructions
+    attr_accessor :name, :glass, :ingredients, :measurements, :instructions, :video
     @@all = []
     
-    def initialize(drink)
-        self.name = drink[:strDrink]
-        self.glass = drink[:strGlass]
-        self.instructions = drink[:strInstructions]
+    def initialize(name, glass, instructions, video, ingredients)
+        @name = name
+        @glass = glass
+        @instructions = instructions
+        @video = video
+        @ingredients = ingredients
         @@all << self
     end
 

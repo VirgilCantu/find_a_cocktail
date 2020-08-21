@@ -5,14 +5,16 @@ class API
         response = RestClient.get(url)
         cocktail_hash = JSON.parse(response.body,symbolize_names:true)
         matches_arr = cocktail_hash[:drinks]
-        
-        
-        matching_cocktails = matches_arr.map do |drink|
-            Cocktail.new(drink)
-            
-        end
-        binding.pry
+        matches_arr.each do |drink|
+            name = drink[:strDrink]
+            glass = drink[:strGlass]
+            instructions = drink[:strInstructions]
+            video = drink[:strVideo]
+            ingredients = []
+            drink.each do |key|
+                binding.pry
+            end
+            Cocktail.new(name, glass, instructions, video, ingredients) 
+        end  
     end
-    
-
 end
