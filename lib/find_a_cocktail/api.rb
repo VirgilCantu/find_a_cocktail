@@ -11,10 +11,23 @@ class API
             instructions = drink[:strInstructions]
             video = drink[:strVideo]
             ingredients = []
-            drink.each do |key|
-                binding.pry
+            
+            15.times do |i|
+                if drink["strIngredient#{i+1}".to_sym] != nil
+                    ingredients << drink["strIngredient#{i+1}".to_sym]
+                end
             end
-            Cocktail.new(name, glass, instructions, video, ingredients) 
+
+            measurements = []
+
+            15.times do |i|
+                if drink["strMeasure#{i+1}".to_sym] != nil
+                    measurements << drink["strMeasure#{i+1}".to_sym]
+                end
+            end
+
+            binding.pry
+            Cocktail.new(name, glass, instructions, video, ingredients, measurements)
         end  
     end
 end
