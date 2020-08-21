@@ -10,6 +10,7 @@ class API
             glass = drink[:strGlass]
             instructions = drink[:strInstructions]
             video = drink[:strVideo]
+
             ingredients = []
             
             15.times do |i|
@@ -26,8 +27,11 @@ class API
                 end
             end
 
-            binding.pry
-            Cocktail.new(name, glass, instructions, video, ingredients, measurements)
-        end  
+            recipe = ingredients.zip(measurements)
+
+            Cocktail.new(name, glass, instructions, video, recipe)
+        end
+
     end
+
 end
