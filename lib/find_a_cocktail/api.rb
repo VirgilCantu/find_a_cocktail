@@ -5,9 +5,9 @@ class API
         response = RestClient.get(url)
         if response.body == "{\"drinks\":null}"
             puts ""
-            puts "Sorry, that drink is not in the database, please try again."
+            puts "Sorry, that drink is not in the database, please try again.".colorize(:red)
             puts ""
-            # CLI.new.start
+            
         else
             cocktail_hash = JSON.parse(response.body,symbolize_names:true)
             matches_arr = cocktail_hash[:drinks]
@@ -16,6 +16,7 @@ class API
                 glass = drink[:strGlass]
                 instructions = drink[:strInstructions]
                 video = drink[:strVideo]
+                image = drink[:strDrinkThumb]
 
                 ingredients = []
                 
@@ -35,7 +36,7 @@ class API
 
                 recipe = ingredients.zip(measurements)
 
-                Cocktail.new(name, glass, instructions, video, recipe)
+                Cocktail.new(name, glass, instructions, video, recipe, image)
         end
         end
 

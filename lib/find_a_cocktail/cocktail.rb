@@ -1,15 +1,16 @@
 class Cocktail
 
-    attr_accessor :name, :glass, :recipe, :instructions, :video
+    attr_accessor :name, :glass, :recipe, :instructions, :video, :image
     
     @@all = []
     
-    def initialize(name, glass, instructions, video, recipe)
+    def initialize(name, glass, instructions, video, recipe, image)
         @name = name
         @glass = glass
         @instructions = instructions
         @video = video
         @recipe = recipe
+        @image = image
         @@all << self
     end
 
@@ -24,7 +25,7 @@ class Cocktail
 
         puts ""
         puts "--------------------"
-        puts @@current_cocktail.name    
+        puts @@current_cocktail.name.colorize(:red)
         puts "--------------------"
         puts ""
         puts "Recipe:"
@@ -43,12 +44,29 @@ class Cocktail
     def self.show_me
         if @@current_cocktail.video == nil
             puts ""
-            puts "Sorry, that cocktail doesn't have a video available"
+            puts "Sorry, that cocktail doesn't have a video available".colorize(:red)
+            self.reset_current
+            CLI.new.start
         else 
             puts ""
             puts @@current_cocktail.video
-
+            self.reset_current
+            CLI.new.start
         end
+    end
+
+    def self.finished
+        if @@current_cocktail.image == nil
+            puts ""
+            puts "Sorry, that cocktail doesn't have an image available".colorize(:red)
+            self.reset_current
+            CLI.new.start
+        else 
+            puts ""
+            puts @@current_cocktail.image
+            self.reset_current
+            CLI.new.start
+        end    
     end
 
     def self.reset_current
