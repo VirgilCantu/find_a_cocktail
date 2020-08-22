@@ -30,7 +30,9 @@ class Cocktail
         puts ""
         puts "Recipe:".colorize(:cyan)
         puts ""
-        puts @@current_cocktail.recipe
+        @@current_cocktail.recipe.each do |pair|
+            puts "#{pair[0]}" + " - " + "#{pair[1]}".colorize(:blue)
+        end
         puts ""
         puts "Glassware:".colorize(:cyan)
         puts @@current_cocktail.glass
@@ -44,7 +46,7 @@ class Cocktail
     def self.show_me
         if @@current_cocktail.video == nil
             puts ""
-            puts "Sorry, that cocktail doesn't have a video available".colorize(:red)
+            puts "Sorry, this cocktail doesn't have a video available".colorize(:red)
             self.reset
             CLI.new.start
         else 
@@ -58,7 +60,7 @@ class Cocktail
     def self.finished
         if @@current_cocktail.image == nil
             puts ""
-            puts "Sorry, that cocktail doesn't have an image available".colorize(:red)
+            puts "Sorry, this cocktail doesn't have an image available".colorize(:red)
             self.reset
             CLI.new.start
         else 

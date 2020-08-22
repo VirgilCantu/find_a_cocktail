@@ -17,7 +17,6 @@ class API
                 instructions = drink[:strInstructions]
                 video = drink[:strVideo]
                 image = drink[:strDrinkThumb]
-
                 ingredients = []
                 measurements = []
 
@@ -29,11 +28,10 @@ class API
                 end
 
                 recipe = ingredients.zip(measurements)
-
+                
                 Cocktail.new(name, glass, instructions, video, recipe, image)
-        end
-        end
 
+            end
+        end
     end
-
 end
