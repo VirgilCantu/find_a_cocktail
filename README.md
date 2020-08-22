@@ -1,4 +1,4 @@
-# FindACocktail
+# Find a Cocktail
 
 Find a Cocktail is a CLI for interacting with the TheCocktailDB API. It searches for cocktails by name and returns information including recipes, cocktail image links and preparation video links.
 
