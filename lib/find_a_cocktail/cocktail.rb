@@ -28,14 +28,14 @@ class Cocktail
         puts @@current_cocktail.name.colorize(:red)
         puts "--------------------"
         puts ""
-        puts "Recipe:"
+        puts "Recipe:".colorize(:cyan)
         puts ""
         puts @@current_cocktail.recipe
         puts ""
-        puts "Glassware:"
+        puts "Glassware:".colorize(:cyan)
         puts @@current_cocktail.glass
         puts ""
-        puts "Instructions:"
+        puts "Instructions:".colorize(:cyan)
         puts @@current_cocktail.instructions
         puts ""
 
@@ -49,7 +49,7 @@ class Cocktail
             CLI.new.start
         else 
             puts ""
-            puts @@current_cocktail.video
+            puts @@current_cocktail.video.colorize(:cyan)
             self.reset_current
             CLI.new.start
         end
@@ -63,7 +63,7 @@ class Cocktail
             CLI.new.start
         else 
             puts ""
-            puts @@current_cocktail.image
+            puts @@current_cocktail.image.colorize(:cyan)
             self.reset_current
             CLI.new.start
         end    
