@@ -20,23 +20,24 @@ class CLI
             start
         else    
             Cocktail.all.each.with_index(1) do |c, i|
-                puts""
+                puts ""
                 puts "#{i}. #{c.name}".colorize(:cyan)
             end
-        puts ""
         select_cocktail
         end
     end
 
     def select_cocktail
+        puts ""
         puts "Please select a cocktail by its number for more information or type #{"exit".red} to quit."
         puts ""
         input = gets.strip.downcase
         if input == "exit"
             exit
         else
-            input = input.to_i
+            input = input.strip.to_i
             until input <= Cocktail.all.count && input > 0
+                puts ""
                 puts "Invalid selection, please try again.".colorize(:red)
                 puts ""
                 input = gets.strip.to_i
@@ -48,24 +49,25 @@ class CLI
 
     def options_menu
         
-        puts "To see an example of the finished cocktail type #{"finished".blue}"
-        puts "To learn how to make this cocktail type #{"show me".green}"
-        puts "To look for another cocktail type #{"search".yellow}"
+        puts "To see an example of the finished cocktail, type #{"finished".blue}"
+        puts "To learn how to make this cocktail, type #{"show me".green}"
+        puts "To look for another cocktail, type #{"search".yellow}"
         puts "To quit, type #{"exit".red}"
         puts ""
 
         input = gets.strip
         
         case input
+            
+            when "finished"   
+                Cocktail.finished    
             when "show me"
                 Cocktail.show_me
             when "search"
-                Cocktail.reset_current
+                Cocktail.reset
                 start
             when "exit"
                 exit
-            when "finished"   
-                Cocktail.finished
             else 
                 puts ""
                 puts "Sorry, that was not a valid command, please try again.".colorize(:red)
@@ -77,6 +79,7 @@ class CLI
     def exit
         puts ""
         puts "Thank you for using Find a Cocktail! Enjoy responsibly!".colorize(:light_magenta)
+        puts ""
     end
 
 end

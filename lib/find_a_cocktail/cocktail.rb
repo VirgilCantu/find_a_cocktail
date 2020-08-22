@@ -45,12 +45,12 @@ class Cocktail
         if @@current_cocktail.video == nil
             puts ""
             puts "Sorry, that cocktail doesn't have a video available".colorize(:red)
-            self.reset_current
+            self.reset
             CLI.new.start
         else 
             puts ""
             puts @@current_cocktail.video.colorize(:cyan)
-            self.reset_current
+            self.reset
             CLI.new.start
         end
     end
@@ -59,17 +59,17 @@ class Cocktail
         if @@current_cocktail.image == nil
             puts ""
             puts "Sorry, that cocktail doesn't have an image available".colorize(:red)
-            self.reset_current
+            self.reset
             CLI.new.start
         else 
             puts ""
             puts @@current_cocktail.image.colorize(:cyan)
-            self.reset_current
+            self.reset
             CLI.new.start
         end    
     end
 
-    def self.reset_current
+    def self.reset
         @@all.clear
     end
 

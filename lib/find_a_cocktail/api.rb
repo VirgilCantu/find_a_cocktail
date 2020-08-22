@@ -19,18 +19,12 @@ class API
                 image = drink[:strDrinkThumb]
 
                 ingredients = []
-                
-                15.times do |i|
-                    if drink["strIngredient#{i+1}".to_sym] != nil
-                        ingredients << drink["strIngredient#{i+1}".to_sym]
-                    end
-                end
-
                 measurements = []
 
                 15.times do |i|
-                    if drink["strMeasure#{i+1}".to_sym] != nil
+                    if drink["strMeasure#{i+1}".to_sym] != nil && drink["strIngredient#{i+1}".to_sym] != nil
                         measurements << drink["strMeasure#{i+1}".to_sym]
+                        ingredients << drink["strIngredient#{i+1}".to_sym]
                     end
                 end
 
