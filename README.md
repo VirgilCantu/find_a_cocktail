@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Upon running the CLI, type the name of a cocktail to initiate a search. The CLI will return a list of matching cocktails in a numbered list, from which you can choose using its relevant list number in order to display more information on that cocktail. The CLI will then display the cocktail's recipe, it's ingredients and their measurements, and display three options. Access a video of the preparation of the cocktail by typing "show me", or an image of the finished cocktail by typing "finished". Otherwise type "search" to initiate a new cocktail search, or "exit" to quit the application.
 
 ## Development
 
@@ -30,7 +30,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/<github username>/find_a_cocktail. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/<github username>/find_a_cocktail/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/VirgilCantu/find_a_cocktail. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/VirgilCantu/find_a_cocktail/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## License
@@ -39,4 +39,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the FindACocktail project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/<github username>/find_a_cocktail/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the FindACocktail project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/VirgilCantu/find_a_cocktail/blob/master/CODE_OF_CONDUCT.md).
