@@ -3,7 +3,7 @@ class CLI
     def welcome 
         puts ""
         puts "---------------------------"
-        puts "Welcome to Find a Cocktail!".colorize(:blue)
+        puts "Welcome to Find a Cocktail!".colorize(:cyan)
         puts "---------------------------"
         puts ""  
         start
