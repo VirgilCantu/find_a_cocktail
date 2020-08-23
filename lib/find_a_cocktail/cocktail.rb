@@ -48,13 +48,11 @@ class Cocktail
             puts ""
             puts "Sorry, this cocktail doesn't have a video available".colorize(:red)
             puts ""
-            # self.reset
             CLI.new.options_menu
         else 
             puts ""
             puts @@current_cocktail.video.colorize(:cyan)
             puts ""
-            # self.reset
             CLI.new.options_menu
         end
     end
@@ -64,13 +62,11 @@ class Cocktail
             puts ""
             puts "Sorry, this cocktail doesn't have an image available".colorize(:red)
             puts ""
-            # self.reset
             CLI.new.options_menu
         else 
             puts ""
             puts @@current_cocktail.image.colorize(:cyan)
             puts ""
-            # self.reset
             CLI.new.options_menu
         end    
     end
